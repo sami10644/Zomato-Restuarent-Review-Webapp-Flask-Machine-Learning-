@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Total Data Science </title>
+    <link rel="stylesheet" href ="{{url_for('static',filename = 'css/style.css')}}">
+    <style>
+    body, html {
+  height: 100%;
+}
+
+.bg {
+
+  background-image: url("https://ik.imagekit.io/3wzatecz51w3i/github/zoma-zomato-restaurants-exploratory-data");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  background-color: lightblue;
+   display:flex; flex-direction:column; justify-content:center;
+  min-height:100vh;
+}
+    .formmstyle{
+     border: none;
+  color: green;
+  padding: 6px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+ .btn
+ {
+  padding: 16px 32px;
+  margin: 4px 2px;
+  display: inline-block;
+   font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+.login{
+     display:flex; flex-direction:column; justify-content:center;
+    font-family: "Helvetica"
+    margin:100px
+    padding:2px
+}
+
+.header {
+  overflow: hidden;
+      font-family: times, Times New Roman, times-roman, georgia, serif;
+	color: #FFD700;
+	margin: 0;
+	padding: 0px 0px 6px 0px;
+	font-size: 51px;
+	line-height: 44px;
+	letter-spacing: -2px;
+	font-weight: bold;
+
+}
+.footer{
+color: #FFD700;
+
+}
+
+
+</style>
+
+</head>
+
+<body class ='bg'>
+
+
+<div class ="login">
+    <h1 class ="header">Predict Zomato Restuarant Ratings</h1>
+
+
+
+    <form action = "{{url_for('predict')}}"method ="post" >
+        <input type = "text"  class="formmstyle"  name = "Online order" placeholder="OrderOnline" required ="required"/><br>
+        <input type = "text" class="formmstyle"  name = "Book Table" placeholder="Book Table" required ="required"/><br>
+        <input type = "text"  class="formmstyle" name = "Votes" placeholder="Votes" required ="required"/><br>
+        <input type = "text"class="formmstyle" name = "Location" placeholder="Location" required ="required"/><br>
+        <input type = "text"class="formmstyle" name = "Resturant Type" placeholder="Restuarant Type" required ="required"/><br>
+        <input type = "text" class="formmstyle"name = "Cuisines" placeholder="Cuisines" required ="required"/><br>
+        <input type = "text"class="formmstyle" name = "Cost" placeholder="Cost" required ="required"/><br>
+         <input type = "text" class="formmstyle"name = "Menu Item" placeholder="Menu Item" required ="required"/><br>
+
+        <button type = "submit" class = "btn">Predict</button>
+
+    </form>
+    <h2 class ="footer">   <strong>{{ prediction_text }} </strong> </h2>
+
+</div>
+
+</body>
+</html>
